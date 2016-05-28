@@ -3,7 +3,9 @@ MAINTAINER Nikolay Rybak <mykola.rybak@gmail.com>
 
 RUN \
 	mkdir -p /aws && \
-	pip install --upgrade awscli==1.10.32
+	pip install --upgrade awscli==1.10.32 && \
+    rm -rf /root/.cache && \
+    rm -rf /var/lib/apt/lists/*
 
 WORKDIR /aws
 ENTRYPOINT ["aws"]
