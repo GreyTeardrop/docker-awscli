@@ -20,4 +20,4 @@ docker rmi awscli-test
 git add Dockerfile
 git commit --no-edit -m "Update AWS CLI version to ${new_version}"
 git tag "${new_version}"
-git push --follow-tags
+git push origin master "${new_version}"
