@@ -3,7 +3,7 @@ MAINTAINER Nikolay Rybak <mykola.rybak@gmail.com>
 
 RUN \
     mkdir -p /aws && \
-    pip install --upgrade awscli==1.10.47 && \
+    pip install --upgrade awscli==1.10.48 && \
     rm -rf /root/.cache && \
     rm -rf /var/lib/apt/lists/*
 
