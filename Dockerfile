@@ -1,4 +1,4 @@
-FROM python:3.5-slim
+FROM python:3.6-slim
 MAINTAINER Nikolay Rybak <mykola.rybak@gmail.com>
 
 LABEL org.label-schema.schema-version="1.0" \
