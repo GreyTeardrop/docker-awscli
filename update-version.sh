@@ -11,7 +11,7 @@ fi
 
 new_version="$1"
 
-sed -i.bak "s/awscli==[0-9.]* /awscli==${new_version} /" Dockerfile
+sed -i.bak "s/org\.label-schema\.version=\"[0-9.]*\"/org.label-schema.version=\"${new_version}\"/; s/awscli==[0-9.]* /awscli==${new_version} /" Dockerfile
 rm Dockerfile.bak
 
 docker build -t awscli-test .
