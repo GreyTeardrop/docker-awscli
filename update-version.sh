@@ -14,7 +14,9 @@ new_version="$1"
 sed -i.bak "s/org\.label-schema\.version=\"[0-9.]*\"/org.label-schema.version=\"${new_version}\"/; s/awscli==[0-9.]* /awscli==${new_version} /" Dockerfile
 rm Dockerfile.bak
 
-docker build -t awscli-test .
+docker build --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") \
+             --build-arg VCS_REF=$(git rev-parse --short HEAD) \
+             -t awscli-test .
 docker rmi awscli-test
 
 git add Dockerfile
